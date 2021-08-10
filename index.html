@@ -1,12 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link href="style.css" rel="stylesheet" />
+        <script src="https://kit.fontawesome.com/b9a13d6938.js" crossorigin="anonymous"></script>
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="indexcontainer">
+            <!-- <div class="indexpictures"> -->
+            <div class="indexpicture" style="max-width:500px">
+                <!-- <img src="img/planning.jpg" class="indeximage"> -->
+                <img class="indeximage w3-animate-fading" src="img/chair.jpg">
+                <!-- <img class="indeximage w3-animate-bottom" src="img/idea.jpg"> -->
+                <img class="indeximage w3-animate-fading" src="img/pencil.jpg">
+                <img class="indeximage w3-animate-fading" src="img/planning.jpg">
+                <img class="indeximage w3-animate-fading" src="img/steelChair.jpg">
+            </div>
+            <div class="credentialcontainer">
+                <button id="launchlogin" onclick="credentialStartUp()" class="loginlaunch">Login</button>
+
+                <div id="id01" class="modal">
+                    
+                    <form action="modal-content animate" method="/action_page.php">
+                        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                        <div class="iconcontainer">
+                            <i class="fas fa-user-alt fa-10x"></i>
+                        </div> 
+
+                        <div class="logincontainer">
+                            <label for="uname"><b>Username</b></label>
+                            <input type="text" placeholder="Enter Username" name="uname" required>
+
+                            <label for="psw"><b>Password</b></label>
+                            <input type="password" placeholder="Enter Password" name="psw" required>
+
+                            <button type="submit">Login</button>
+                            <div class="optionsContainer">
+                                <label class="loginissues">
+                                    <input type="checkbox" checked="checked" name="remember"> Remember Me
+                                </label>
+                                <span class="psw">Forget <a href="#">password?</a></span>
+                            </div>
+                        </div>
+
+                        <div class="cancelcontainer">
+                        <button type="button" class="cancelbtn">Cancel</button>
+                    </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script src='index.js'></script>
+    </body>
 </html>
