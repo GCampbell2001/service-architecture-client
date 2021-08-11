@@ -20,5 +20,6 @@ function carousel() {
 
 function credentialStartUp() {
     document.getElementById("launchlogin").style.display = 'none';
+    document.getElementById("logo").style.display = 'none';
     document.getElementById('id01').style.display='block';
 }

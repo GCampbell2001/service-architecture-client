@@ -21,11 +21,15 @@
                 <img class="indeximage w3-animate-fading" src="img/steelChair.jpg">
             </div>
             <div class="credentialcontainer">
+                <div id="logo" class="logo">
+                    <i class="fas fa-book fa-8x"></i>
+                    <h1>Project Classes</h1>
+                </div>
                 <button id="launchlogin" onclick="credentialStartUp()" class="loginlaunch">Login</button>
 
                 <div id="id01" class="modal">
                     
-                    <form action="modal-content animate" method="/action_page.php">
+                    <form action="modal-content animate" method="/action_page.php" class="loginform">
                         <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
                         <div class="iconcontainer">
                             <i class="fas fa-user-alt fa-10x"></i>
@@ -38,7 +42,7 @@
                             <label for="psw"><b>Password</b></label>
                             <input type="password" placeholder="Enter Password" name="psw" required>
 
-                            <button type="submit">Login</button>
+                            <button type="submit" class="loginbutton">Login</button>
                             <div class="optionsContainer">
                                 <label class="loginissues">
                                     <input type="checkbox" checked="checked" name="remember"> Remember Me
