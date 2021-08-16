@@ -23,3 +23,9 @@ function credentialStartUp() {
     document.getElementById("logo").style.display = 'none';
     document.getElementById('id01').style.display='block';
 }
+
+function cancelButton() {
+    document.getElementById("launchlogin").style.display = 'block';
+    document.getElementById("logo").style.display = 'block';
+    document.getElementById('id01').style.display='none';
+}

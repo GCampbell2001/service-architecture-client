@@ -30,7 +30,7 @@
                 <div id="id01" class="modal">
                     
                     <form action="modal-content animate" method="/action_page.php" class="loginform">
-                        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                        <span onclick="cancelButton()" class="close" title="Close Modal">&times;</span>
                         <div class="iconcontainer">
                             <i class="fas fa-user-alt fa-10x"></i>
                         </div> 
@@ -52,7 +52,7 @@
                         </div>
 
                         <div class="cancelcontainer">
-                        <button type="button" class="cancelbtn">Cancel</button>
+                        <button type="button" class="cancelbtn" onclick="cancelButton()">Cancel</button>
                     </div>
 
                     </form>
