@@ -1,5 +1,5 @@
 html{
-    background-color: #0353A4;
+    background-color: #FFEDE6;
 }
 
 .indexcontainer{
@@ -222,67 +222,52 @@ a{
 
 span{
     color: #fff;
-}
-/* 
-ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #FFE8D1;
+    padding: 0px 5px;
 }
 
-li a, .dropbtn{
-    display: inline-flex;
-    color: #000;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+span:hover {
+    color:#808080;
 }
 
-li a:hover, .dropdown:hover .dropbtn{
-    background-color: #D1F4FF;
+.signout:hover {
+    color:#808080;
+}
+                  /* -----------------------------------editing-container-styling------------------------------------------ */
+.degree-site-container{
+    display: flex;
+    margin-top: 60px;
+    padding: 10px;
+    flex-direction: column;
+    background-color: #fff;
+    border: #A36700;
+    border-style: groove;
+    border-width: 3px;
+    border-radius: 15px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.15);
 }
 
-li.dropdown{
-    display: inline-block;
+.userHeader{
+    display: flex;
+    margin: auto;
 }
 
-.dropdown-menu{
-    display: none;
-    position: absolute;
-    background-color: #FFF5EB;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+.userIcon{
+
 }
 
-.dropdown-menu a{
-    color: #000;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: blcok;
-    text-align: left;
+.userInfo{
+    padding-left: 10px;
 }
 
-.dropdown-menu a:hover{
-    background-color: #f1f1f1;
+.degreeChart{
+    /* padding-left: 20%; */
+    margin: auto;
 }
 
-.dropdown:hover .dropdown-menu{
-    display: block;
-}
 
-.logout{
-    float: right;
-}
-
-.logoutbtn:hover{
-    background-color: #FFADAD;
-} */
                   /* ----------------------------------------table-styling------------------------------------------ */
 
-table, th, td{
+/* table, th, td{
     border: 1px solid black;
     border-collapse: collapse;
     border-spacing: 5px;
@@ -291,26 +276,63 @@ table, th, td{
 th, td {
     text-align: left;
     padding: 5px;
-}
+} */
 
 .degreeTable{
-    border: 1px solid black;
+    /* border: 1px solid black;
+    border-collapse: collapse; */
     border-collapse: collapse;
-    border-spacing: 5px;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    /* border-spacing: 5px; */
 }
 
-#courseTable th{
+.degreeTable thead tr{
+    background-color: #573700;
+    color: #fff;
+    text-align: left;
+}
+
+.degreeTable th,
+.degreeTable td{
+    padding: 12px 15px;
+}
+
+.degreeTable tbody tr{
+    border-bottom: thin solid #ddd;
+}
+
+.degreeTable tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.degreeTable tbody tr:last-of-type {
+    border-bottom: 2px solid #A36700;
+}
+
+.degreeTable tbody tr:hover{
+    font-weight: bold;
+    color: #A36700;
+}
+
+/* #courseTable th{
     /* background-color: #3C6997; */
-    background-color: #000;
+    
+    /* background-color: #000;
     color: white;
-}
-
+} */
+/* 
 #courseTable tr:nth-child(even) {
-    background-color: #4FF8F8;
-    color: #000;
+    background-color: #573600;
+    color: #fff;
 }
 
 #courseTable tr:nth-child(odd) {
-    background-color: #9DFBFB;
-    color: #000;
-}
+    background-color: #A36803;
+    color: #fff;
+} */
