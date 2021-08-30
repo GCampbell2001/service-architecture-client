@@ -49,7 +49,6 @@ function TableGenerate() {
             td.appendChild(text);
             tr.appendChild(td);
         }
-
         tbody.appendChild(tr);
         table.appendChild(tbody);
     }
@@ -68,19 +67,35 @@ function populateCourseInfo(CourseCode){
     //     courseInfo.push(data.endDate);
     // });
 
-    var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open("POST", "http://localhost:9090/courses");
-    xmlHttp.setRequestHeader('Access-Control-Allow-Headers', '*');
-    // xmlHttp.setRequestHeader("X-Requested-With", "XMLHttpRequest");
-    xmlHttp.setRequestHeader('Content-Type', 'application/json');
-    xmlHttp.setRequestHeader('Access-Control-Allow-Origin', '*');
-    xmlHttp.send();
-    xmlHttp.onreadystatechange = function(){
-        if(xmlHttp.status == 200){
-            var json_data = xmlHttp.responseText;
-            console.log(json_data);
-            // return json_data;
-        }
+    // var xmlHttp = new XMLHttpRequest();
+    // xmlHttp.open("POST", "http://localhost:9090/courses");
+    // xmlHttp.setRequestHeader('Access-Control-Allow-Headers', '*');
+    // // xmlHttp.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+    // xmlHttp.setRequestHeader('Content-Type', 'application/json');
+    // xmlHttp.setRequestHeader('Access-Control-Allow-Origin', '*');
+    // xmlHttp.send();
+    // xmlHttp.onreadystatechange = function(){
+    //     if(xmlHttp.status == 200){
+    //         var json_data = xmlHttp.responseText;
+    //         console.log(json_data);
+    //         // return json_data;
+    //     }
+    // }
+
+    try{
+        fetch('http://localhost:9090/courses/' + CourseCode).then(res =>
+            res.json()).then(data => {list = data;
+                courseInfo.splice(0, courseInfo.length);
+                // console.log(data);
+                courseInfo.push(data.code);
+                courseInfo.push(data.name);
+                courseInfo.push(data.courseTime);
+                courseInfo.push(data.startDate);
+                courseInfo.push(data.endDate);
+                courseInfo.push(data.instructorName);
+            });
+    } catch(err) {
+        console.log(err);
     }
 
 }
