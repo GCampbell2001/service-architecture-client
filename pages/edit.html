@@ -4,37 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style.css" rel="stylesheet" />
+    <link href="/style.css" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/b9a13d6938.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="img/favicon.ico">
-    <title>Opportunity</title>    
+    <title>Opportunity</title>
     <header class="banner">
         <i class="fas fa-book fa-2x">Opportunity</i>
         <nav>
             <a class="active" href="degree.html"><span>Home</span></a>
             <a href="edit.html" class="dropbtn"><span>Schedule</span></a>
         </nav>
+        <!-- <i class="fas fa-chalkboard-teacher"></i> -->
         <i class="fas fa-sign-out-alt fa-2x signout" onclick="signout()"></i>
     </header>
 </head>
 <body>
     <div class="degree-site-container">
-        <div class="userHeader">
-            <div class="userIcon">
-                <i class="fas fa-book-reader fa-10x"></i>
-            </div>
-            <div class="userInfo">
-                <p id="idUser">ID:123456789</p>
-                <p id="nameUser">Name:Testing</p>
-                <p id="username">Username:Testing123</p>
-                <p id="Email">Email:Testing@test.com</p>
-                <p id="birthdayUser">Birthday:3/06/1981</p>
-                <p id="degreeUser">Degree:Testing Testing</p>
-            </div>
-        </div>
-        <div class="degreeChart">
+        <div class="ogSchedule">
             <table id="courseTable" class="degreeTable">
-                <!-- <thead>
+                <thead>
                     <tr>
                         <th>Code</th>
                         <th>Course Name</th>
@@ -69,13 +57,54 @@
                         <td>test</td>
                         <td>test</td>
                     </tr>
-                </tbody> -->
+                </tbody>
             </table>
-
-
         </div>
+    <div class="degreeChart">
+        <table id="fullCourseTable" class="degreeTable">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Code</th>
+                    <th>Course Name</th>
+                    <th>Course Time</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Instructor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="checkbox" name="courses"></td>
+                    <td> words</td>
+                    <td>test</td>
+                    <td>Whoopi</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>Mr. Thiccc</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="courses"></td>
+                    <td>Yahoo</td>
+                    <td>mario</td>
+                    <td>Luigi</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>Mrs. ThiQQQQ</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" name="courses" class="yahoo"></td>
+                    <td>Yahoo</td>
+                    <td>mario</td>
+                    <td>Luigi</td>
+                    <td>test</td>
+                    <td>test</td>
+                    <td>Miss ThiCCQ</td>
+                </tr>
+            </tbody>
+        </table>
+        <button class="update-schedule" type="button" onClick="updateSchedule()">Update</button>
     </div>
-        
-        <script src='degree.js'></script>
-    </body>
+    <script src='/scripts/editDegree.js'></script>
+</body>
 </html>
