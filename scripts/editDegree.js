@@ -2,8 +2,12 @@ let courseList = ["15"];
 let courseInfo = [];
 let headerList = ["Code", "Course Name", "Course Time", "Start Date", "End Date", "Instructor"];
 let fullCourseCodes = [];
+let userData;
+let userInfo;
 
 window.onload = function loadCatalog() {
+    userData = sessionStorage.getItem("user");
+    userInfo = JSON.parse(userData);
     TableGenerate();
     FullCourseGenerate();
 }
@@ -34,24 +38,6 @@ function FullCourseGenerate() {
         tbody.appendChild(tr);
         table.appendChild(tbody);
     }
-
-
-    
-
-
-    // for(var i=0; i < courseList.length; i++){
-    //     var tr = document.createElement('tr');
-    //     populateCourseInfo(courseList[i])
-    //     for(var j=0; j< 6; j++) {
-    //         var td = document.createElement('td');
-    //         var text = document.createTextNode(courseInfo[j]);
-    //         td.appendChild(text);
-    //         tr.appendChild(td);
-    //     }
-    //     tbody.appendChild(tr);
-    //     table.appendChild(tbody);
-    // }
-
 
 }
 
@@ -126,6 +112,32 @@ function updateSchedule() {
         }
     }
     //TODO: need to update the User and cookies for course list to the codes from codesToAdd[]
-    
+    let userId = userInfo.id;
+    let userUsername = userInfo.username;
+    let userPasswordJson = userInfo.password;
+    let userName = userInfo.name;
+    let userDegree = userInfo.degree;
+    let userEmail = userInfo.email;
+    let userBirthday = userInfo.birthday;
+    let userAuthority = userInfo.authority;
+    let userCourseList = codesToAdd;
+
+    var entry = {
+        "id" : userId,
+        "username" : userUsername,
+        "password" : userPasswordJson,
+        "name" : userName,
+        "degree" : userDegree,
+        "email" : userEmail,
+        "birthday" : userBirthday,
+        "authority" : userAuthority,
+        "courseList" : userCourseList
+    };
+
+    var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open("POST", "http://localhost:9091/users");
+        xmlHttp.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+        xmlHttp.setRequestHeader('Content-Type', 'application/json');
+        xmlHttp.send(JSON.stringify(entry));
 }
 
