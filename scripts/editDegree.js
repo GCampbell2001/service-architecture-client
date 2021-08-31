@@ -135,9 +135,30 @@ function updateSchedule() {
     };
 
     var xmlHttp = new XMLHttpRequest();
-        xmlHttp.open("POST", "http://localhost:9091/users");
+        xmlHttp.open("PUT", "http://localhost:9091/users");
         xmlHttp.setRequestHeader("X-Requested-With", "XMLHttpRequest");
         xmlHttp.setRequestHeader('Content-Type', 'application/json');
         xmlHttp.send(JSON.stringify(entry));
+        xmlHttp.onreadystatechange = function(){
+            if(xmlHttp.status == 200){
+                sendEmail(userEmail);
+            }
+        }
+}
+
+function sendEmail(userEmail) {
+    var entry = {
+        "Sender" : "Opportunity" ,
+        "Reciever" : userEmail,
+        "Subject" : "Course Schedule Update",
+        "BodyText" : "Your schedule has been successfuly updated"
+    };
+
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open("POST", "http://localhost:9095/email");
+    xmlHttp.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+    xmlHttp.setRequestHeader('Content-Type', 'application/json');
+    xmlHttp.send(JSON.stringify(entry));
+        
 }
 
