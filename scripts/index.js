@@ -31,8 +31,10 @@ function cancelButton() {
 }
 
 function login() {
+    var username = document.getElementById("uname").value;
+    var password = document.getElementById("psw").value;
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open("POST", "http://localhost:9090/users/" + username + "/" + password);
+    xmlHttp.open("GET", "http://localhost:9091/users/" + username + "/" + password);
     xmlHttp.setRequestHeader('Access-Control-Allow-Headers', '*');
     // xmlHttp.setRequestHeader("X-Requested-With", "XMLHttpRequest");
     xmlHttp.setRequestHeader('Content-Type', 'application/json');
